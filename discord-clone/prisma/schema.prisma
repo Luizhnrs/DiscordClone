@@ -16,6 +16,7 @@ model Profile{
   email String @db.Text
 
   server Server[]
+  member Member[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -42,5 +43,14 @@ enum MemberRole{
 }
 
 model Member{
-  
+  id String @id @default(uuid())
+  role MemberRole @default(GUEST)
+
+  profileId String
+  Profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  serverId String
+  Profile Profile @relation(fields: [serverId], references: [id], onDelete: Cascade)
+
+  @@index([profileId])
 }
