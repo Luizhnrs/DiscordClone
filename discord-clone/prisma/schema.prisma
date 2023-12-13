@@ -8,30 +8,31 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Profile{
+model Profile {
   id String @id @default(uuid())
   userId String @unique
   name String
   imageUrl String @db.Text
   email String @db.Text
 
-  server Server[]
-  member Member[]
+  servers Server[]
+  members Member[]
   channels Channel[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-model Server{
+model Server {
   id String @id @default(uuid())
   name String
   imageUrl String @db.Text
+  inviteCode String @unique
 
   profileId String
-  Profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
-  members Members[]
+  members Member[]
   channels Channel[]
 
   createdAt DateTime @default(now())
@@ -40,33 +41,33 @@ model Server{
   @@index([profileId])
 }
 
-enum MemberRole{
+enum MemberRole {
   ADMIN
   MODERATOR
-  GUEST 
+  GUEST
 }
 
-model Member{
+model Member {
   id String @id @default(uuid())
   role MemberRole @default(GUEST)
 
   profileId String
-  Profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
   serverId String
-  Profile Profile @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
 
-  createdAt DateTime @default (now())
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([profileId])
   @@index([serverId])
 }
 
-enum ChannelType{
-  TEXT 
-  AUDIO 
-  VIDEO 
+enum ChannelType {
+  TEXT
+  AUDIO
+  VIDEO
 }
 
 model Channel {
@@ -75,14 +76,16 @@ model Channel {
   type ChannelType @default(TEXT)
 
   profileId String
-  Profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
   serverId String
-  Profile Profile @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
 
-  createdAt DateTime @default (now())
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([profileId])
   @@index([serverId])
 }
+
+
