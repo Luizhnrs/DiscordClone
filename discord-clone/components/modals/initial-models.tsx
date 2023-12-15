@@ -25,6 +25,7 @@ const fromSchema = z.object({
 
 export const InitialModal = () => {
     const form = useForm({
+        resolver: zodResolver(fromSchema),
         defaultValues:{
             name:"",
             imageUrl:"",
