@@ -13,6 +13,15 @@ import{
     DialogTitle
 } from "@/components/ui/dialog"
 
+import{
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage
+} from "@/components/ui/form";
+
 const fromSchema = z.object({
     name: z.string().min(1,{
         message:"Server Name is Required"
@@ -32,16 +41,22 @@ export const InitialModal = () => {
         }
     });
 
+    const isLoading = form.formState.isSubmitting;
+    const onSubmit = async (values: z.infer<typeof fromSchema>) => {
+        console.log(values)
+    }
+
+
     return(
         <Dialog open>
             <DialogContent className="bg-white text-black p-0 
             overflow-hidden">
                 <DialogHeader className="pt-8 px-6">
                   <DialogTitle className="text-2xl text-center font-bold">
-                    Customize Your Server
+                    Customize Server
                   </DialogTitle>
                   <DialogDescription className="text-center text-zinc-500">
-                    Leave your server with your face, with a name, an image, remembering that you can change this later
+                    Leave your server with your face, with a name, an image, i change this later
                   </DialogDescription>
                 </DialogHeader>
             </DialogContent>
