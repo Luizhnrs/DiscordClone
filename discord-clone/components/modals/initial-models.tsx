@@ -11,8 +11,13 @@ import{
 
 export const InitialModal = () => {
     return(
-        <div>
-            This will be a modal!
-        </div>
+        <Dialog open>
+            <DialogContent className="bg-White text-black p-0 
+            overflow-hidden">
+                <DialogHeader>
+                    Customize Your Server
+                </DialogHeader>
+            </DialogContent>
+        </Dialog>
     )
 }
