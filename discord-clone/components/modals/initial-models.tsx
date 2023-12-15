@@ -12,7 +12,6 @@ import{
     DialogHeader,
     DialogTitle
 } from "@/components/ui/dialog"
-
 import{
     Form,
     FormControl,
@@ -21,6 +20,8 @@ import{
     FormLabel,
     FormMessage
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const fromSchema = z.object({
     name: z.string().min(1,{
@@ -59,6 +60,13 @@ export const InitialModal = () => {
                     Leave your server with your face, with a name, an image, i change this later
                   </DialogDescription>
                 </DialogHeader>
+                <Form{...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <div>
+                    
+                </div>
+                </form>
+                </Form>
             </DialogContent>
         </Dialog>
     )
