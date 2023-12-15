@@ -82,12 +82,18 @@ export const InitialModal = () => {
                                     focus-visible:ring-0 text-black 
                                     focus-visible:ring-offset-0"
                                     placeholder="Enter Server Name"
+                                    {...field}
                                 />
                             </FormControl>
                         </FormItem>
                     )}
                 />
                 </div>
+                <DialogFooter className="bg-gray-100 px-6 py-4">
+                    <Button disabled={isLoading}>
+                        Create
+                    </Button>
+                </DialogFooter>
                 </form>
                 </Form>
             </DialogContent>
