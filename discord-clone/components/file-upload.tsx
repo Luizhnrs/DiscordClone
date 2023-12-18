@@ -21,10 +21,11 @@ export const FileUpload = ({
     endpoint 
 }: FileUploadProps) => {
     const filetype = value?.split(".").pop();
+
     if(value && filetype !== "pdf") {
         return(
             <div className="relative h-20 w-20">
-                <image
+            <Image
                 fill
                 src={value}
                 alt="Upload"
