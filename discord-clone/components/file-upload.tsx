@@ -1,6 +1,8 @@
 "use client";
 
-import { Stringifier } from "postcss";
+import { X } from "lucide-react";
+import Image from "next/image";
+
 import { UploadDropzone } from "@/lib/uploadthing";
 
 import "@uploadthing/react/styles.css"
@@ -13,18 +15,30 @@ interface FileUploadProps {
 }
 
 
-
 export const FileUpload = ({
     onChange,
     value,
     endpoint 
 }: FileUploadProps) => {
+    const filetype = value?.split(".").pop();
+    if(value && filetype !== "pdf") {
+        return(
+            <div className="relative h-20 w-20">
+                <image
+                fill
+                src={value}
+                alt="Upload"
+                className="rounded-full"
+                />
+            </div>
+        )
+    }
+
     return (
        <UploadDropzone
         endpoint={endpoint}
         onClientUploadComplete={(res)=> {
-            onChange(res?.[0]
-                .url);
+            onChange(res?.[0].url);
         }}
         onUploadError={(error: Error)=> {
             console.log(error);
