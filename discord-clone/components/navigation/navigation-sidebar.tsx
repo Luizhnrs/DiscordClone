@@ -1,4 +1,4 @@
-const NavigationSideBar = () => {
+export const NavigationSideBar = () => {
     return ( 
         <div>
             Navigation Side Bar
