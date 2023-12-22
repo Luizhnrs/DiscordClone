@@ -28,7 +28,7 @@ export const NavigationSideBar = async () => {
         <Separator
           className="h-[2px] bg-zinc-300 dark:bg-zinc-700 rounded-md w-10 mx-auto"
         />
-        <ScrollArea>
+        <ScrollArea  className="flex-1 w-full" >
 
         </ScrollArea>
     </div>
