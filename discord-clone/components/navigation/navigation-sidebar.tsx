@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { NavigationAction } from "./navigation-action";
 import { Separator } from "@/components/ui/separator";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const NavigationSideBar = async () => {
   const profile = await currentProfile();
@@ -27,6 +28,9 @@ export const NavigationSideBar = async () => {
         <Separator
           className="h-[2px] bg-zinc-300 dark:bg-zinc-700 rounded-md w-10 mx-auto"
         />
+        <ScrollArea>
+
+        </ScrollArea>
     </div>
   );
 };
