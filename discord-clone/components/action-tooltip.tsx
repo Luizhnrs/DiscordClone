@@ -13,7 +13,7 @@ import {
     side?: "top" | "right" | "bottom" | "left";
     align?: "start" | "center" | "end";
   }
-  
+
   export const ActionTooltip = ({
     label,
     children,
@@ -34,3 +34,4 @@ import {
         </Tooltip>
       </TooltipProvider>
     )
+  }
