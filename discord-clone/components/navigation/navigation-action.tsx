@@ -6,6 +6,11 @@ import { ActionTooltip } from "@/components/action-tooltip";
 export const NavigationAction = () => {
     return(
         <div>
+            <ActionTooltip
+            side="right"
+            align="center"
+            label="Add a Server"
+            >
            <button 
             className="group flex items-center"
            >
@@ -16,8 +21,10 @@ export const NavigationAction = () => {
                     className="group-hover:text-white transition text-emerald-500"
                     size={25}
                 />
+                
             </div>
            </button>
+           </ActionTooltip>
         </div>
     )
 }
