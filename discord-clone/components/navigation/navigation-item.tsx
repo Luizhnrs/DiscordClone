@@ -21,6 +21,8 @@ export const NavigationItem = ({
     return(
       <ActionTooltip
         side="right"
+        align="center"
+        label={name}
       >
         <div>
             Server
