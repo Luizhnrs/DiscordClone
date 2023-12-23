@@ -24,9 +24,10 @@ export const NavigationItem = ({
         align="center"
         label={name}
       >
-        <div>
+        <button
+        >
             Server
-        </div>
+        </button>
     </ActionTooltip>
     )
 }
