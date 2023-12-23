@@ -25,8 +25,14 @@ export const NavigationItem = ({
         label={name}
       >
         <button
+        onClick={() => {}}
+        className="group relative flex items-center"
         >
-            Server
+           <div
+            className=""
+           >
+
+           </div>
         </button>
     </ActionTooltip>
     )
