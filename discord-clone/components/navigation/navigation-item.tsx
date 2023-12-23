@@ -19,8 +19,12 @@ export const NavigationItem = ({
     name
 }: NavigationItemProps ) => {
     return(
+      <ActionTooltip
+        side="right"
+      >
         <div>
             Server
         </div>
+    </ActionTooltip>
     )
 }
