@@ -20,6 +20,7 @@ export const NavigationItem = ({
     name
 }: NavigationItemProps ) => {
     const params = useParams();
+    const router = useRouter();
 
     return(
       <ActionTooltip
