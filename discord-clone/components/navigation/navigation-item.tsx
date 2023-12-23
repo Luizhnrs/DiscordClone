@@ -29,7 +29,10 @@ export const NavigationItem = ({
         className="group relative flex items-center"
         >
            <div
-            className=""
+            className={cn (
+                "absolute left-0 bg-primary rounded-r-full transition-all w-[4px]",
+                
+            )}
            >
 
            </div>
