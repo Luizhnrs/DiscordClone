@@ -12,3 +12,15 @@ interface NavigationItemProps{
     imageUrl: string;
     name: string;
 }
+
+export const NavigationItem = ({
+    id,
+    imageUrl,
+    name
+}: NavigationItemProps ) => {
+    return(
+        <div>
+            Server
+        </div>
+    )
+}
