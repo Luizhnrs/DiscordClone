@@ -21,6 +21,10 @@ export const NavigationItem = ({
 }: NavigationItemProps ) => {
     const params = useParams();
     const router = useRouter();
+    
+    const onClick = () => {
+        router.push(`/servers/${id}`);
+    }
 
     return(
       <ActionTooltip
