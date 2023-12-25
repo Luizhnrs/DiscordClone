@@ -36,15 +36,9 @@ const fromSchema = z.object({
   }),
 });
 
-export const InitialModal = () => {
-    const [isMounted,setIsMounted] = useState(false);
-
+export const CreateServerModal = () => {
     const router = useRouter();
 
-    useEffect(() => {
-        setIsMounted(true)
-    }, []);
-  
     const form = useForm({
     resolver: zodResolver(fromSchema),
     defaultValues: {
@@ -68,10 +62,6 @@ export const InitialModal = () => {
       console.log(error);
     }
   };
-
-  if(!isMounted){
-    return null;
-  }
 
   return (
     <Dialog open>
