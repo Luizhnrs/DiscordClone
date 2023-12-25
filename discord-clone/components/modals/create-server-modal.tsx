@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import { FileUpload } from "../file-upload";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-modal-store";
+import { constants } from "buffer";
 
 const fromSchema = z.object({
   name: z.string().min(1, {
@@ -40,6 +41,8 @@ const fromSchema = z.object({
 export const CreateServerModal = () => {
   const {isOpen, onClose, type} = useModal();
   const router = useRouter();
+
+  const isModalOpen = isOpen && type === "Create Server";
 
     const form = useForm({
     resolver: zodResolver(fromSchema),
