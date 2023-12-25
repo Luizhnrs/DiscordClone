@@ -74,7 +74,7 @@ export const InitialModal = () => {
   }
 
   return (
-    <Dialog open>
+    <Dialog open={isModalOpen}>
       <DialogContent
         className="bg-white text-black p-0 
             overflow-hidden"
