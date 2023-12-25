@@ -3,7 +3,7 @@
 import axios from "axios";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState } from "react";
+
 import { useForm } from "react-hook-form";
 
 import {
@@ -56,7 +56,6 @@ export const CreateServerModal = () => {
 
       form.reset();
       router.refresh();
-      window.location.reload();
 
     } catch(error){
       console.log(error);
